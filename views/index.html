@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js" defer></script>
+    <script type="text/javascript" src="app.module.js" defer></script>
+    <script type="text/javascript" src="javascripts/services/comments.service.js" defer></script>
+    <script type="text/javascript" src="javascripts/components/comments-feed/comments-feed.js" defer></script>
+    <script type="text/javascript" src="javascripts/directives/gravatar.directive.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/reset.css" />
+    <link rel="stylesheet" href="stylesheets/main.css" />
+
+  </head>
+  <body>
+    <ng-view ng-app="CommentsFeed" ng-controller="AppCtrl">
+    </ng-view>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<div class="comments-feed">
+  <form name="newCommentForm" class="new-comment-form">
+    <div class="form-control">
+      <input placeholder="Email" type="email" ng-model="commentsFeed.newComment.email" required/>
+    </div>
+    <div class="form-control margin-top">
+      <textarea placeholder="Message" ng-model="commentsFeed.newComment.message"></textarea>
+    </div>
+    <button class="margin-top" ng-class="{'disabled': newCommentForm.$invalid}"  ng-click="commentsFeed.save()" ng-disabled="newCommentForm.$invalid">Submit<!--Should implemented l10n service/directive!--></button>
+  </form>
+
+  <div class="comments">
+    <input ng-show="commentsFeed.comments.length > 2" class="filter-input" type="text" ng-model="commentsFeed.filterQuery" placeholder="Filter" />
+    <ul>
+      <li ng-repeat="comment in commentsFeed.comments | filter: commentsFeed.filterQuery">
+        <gravatar email="comment.email"></gravatar>
+        <div class="comment-content">
+          <h3 ng-bind="comment.email">
+          </h3>
+          <p ng-bind="comment.message"></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
